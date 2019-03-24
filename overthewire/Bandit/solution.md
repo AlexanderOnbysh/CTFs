@@ -59,10 +59,62 @@ password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 cat data.txt | grep millionth
 ```
 password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
-```
 
 ## 8
 ```sh
 cat data.txt | sort | uniq -u
 ```
 password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+## 9
+```sh
+strings data.txt | egrep "[=]{2,}"
+```
+password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+## 10
+```sh
+base64 -d data.txt
+```
+password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+## 11
+```sh
+cat data.txt | tr '[a-z]' '[n-za-m]' | tr '[A-Z]' '[N-ZA-M]'
+```
+
+password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+## 12
+```sh
+xxd -r data.txt | gzip -d | bzip2 -d | gzip -d | tar -x
+tar -xf data5.bin
+tar -xf data6.bin
+cat data8.bin | gzip -d
+```
+password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+## 13
+```sh
+ssh -i sshkey.private bandit14@localhost
+```
+password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+## 14
+```sh
+telnet localhost 30000
+```
+password: BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+## 15
+```sh
+openssl s_client -connect localhost:30001
+```
+password: cluFn7wTiGryunymYOu4RcffSxQluehd
+
+## 16
+```sh
+```
+
+
+
