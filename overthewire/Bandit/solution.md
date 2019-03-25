@@ -114,7 +114,91 @@ password: cluFn7wTiGryunymYOu4RcffSxQluehd
 
 ## 16
 ```sh
+-zv localhost 31000-32000
+	localhost [127.0.0.1] 31790 (?) open
+	localhost [127.0.0.1] 31518 (?) open
+openssl s_client -connect localhost:31790
 ```
+ssh key
+
+## 17
+```sh
+diff passwords.new passwords.old
+```
+password: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+## 18
+```sh
+ssh -p 2220 -t bandit18@bandit.labs.overthewire.org /bin/sh<Paste>
+```
+password: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+## 19
+```sh
+./bandit20-do cat /etc/bandit_pass/*
+```
+password: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+## 20
+```sh
+sleep 10 && ./suconnect 12345 &
+nc -l -p 12345
+```
+password: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+## 21
+```sh
+cat /etc/cron.d/cronjob_bandit22
+	#!/bin/bash
+	chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+	cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+```
+password: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+## 22
+```sh
+cat /etc/cron.d/cronjob_bandit23
+	@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+	* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+cat /usr/bin/cronjob_bandit23.sh
+	#!/bin/bash
+
+	myname=$(whoami)
+	mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+	echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+	cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+target=$(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)
+cat /tmp/$target
+```
+password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
 
+## 23
+```sh
+cat /etc/cron.d/cronjob_bandit24
+	@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+	* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
+cat /usr/bin/cronjob_bandit24.sh
+	#!/bin/bash
+
+	myname=$(whoami)
+
+	cd /var/spool/$myname
+	echo "Executing and deleting all scripts in /var/spool/$myname:"
+	for i in * .*;
+	do
+	    if [ "$i" != "." -a "$i" != ".." ];
+	    then
+		echo "Handling $i"
+		timeout -s 9 60 ./$i
+		rm -f ./$i
+	    fi
+	done
+```
 
